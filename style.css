@@ -1,0 +1,134 @@
+:root {
+  --color-1: #fafafa;
+  --color-1-rgb: 250, 250, 250;
+  --color-1-hsl: 0, 0%, 98%;
+  --color-2: #e5e5e5;
+  --color-2-rgb: 229, 229, 229;
+  --color-2-hsl: 0, 0%, 90%;
+  --color-3: #737373;
+  --color-3-rgb: 115, 115, 115;
+  --color-3-hsl: 0, 0%, 45%;
+  --color-4: #262626;
+  --color-4-rgb: 38, 38, 38;
+  --color-4-hsl: 0, 0%, 15%;
+  --color-5: #0a0a0a;
+  --color-5-rgb: 10, 10, 10;
+  --color-5-hsl: 0, 0%, 4%;
+}
+
+@font-face {
+  font-family: "Gravitas One";
+  src: url("./fonts/Gravitas_One/GravitasOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Rubik Lines";
+  src: url("./fonts/Rubik_Lines/RubikLines-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Castoro Titling";
+  src: url("./fonts/Castoro_Titling/CastoroTitling-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #fafbfc;
+}
+
+header h1 {
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: var(--color-4);
+  text-shadow: 2px 2px var(--color-5);
+}
+
+#search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+#search-input {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid var(--color-5);
+  outline: none;
+  font-family: "Rubik Lines", sans-serif;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+#search-input:focus {
+  border-color: var(--color-5);
+  box-shadow: 0 0 0 3px rgba(var(--color-1-rgb), 0.3);
+}
+
+/* Optional styling if you have a search button */
+#search button {
+  background-color: var(--color-1);
+  color: #222;
+  border: 2px solid var(--color-5);
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Rubik Lines", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#search button:hover {
+  background-color: var(--color-3);
+}
+
+#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  border: 2px solid var(--color-3);
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 12px;
+  font-size: 14px;
+  margin: 0;
+  font-family: "Castoro Titling", serif;
+  font-weight: 700;
+  color: #333;
+}
+
+.gravitas-one-regular {
+  font-family: "Gravitas One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
