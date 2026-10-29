@@ -1,0 +1,1 @@
+PixelText is a custom-styled image and text discovery web application built with vanilla HTML, CSS, and JavaScript. For design decisions, I implemented a row of quick-pick suggestion chips to let users explore popular categories with a single click, and added an empty-state placeholder box to clearly guide users before they run a search query.

@@ -3,19 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PixelPulse</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>PixelText</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
-      <h1>PixelPulse</h1>
-      <form id="search">
-        <input type="text" id="search-input" placeholder="Search Images..." />
+      <h1>PixelText</h1>
+      <form id="search" onsubmit="event.preventDefault()">
+        <div style="flex: 1; display: flex; flex-direction: column">
+          <label
+            for="search-input"
+            style="
+              position: absolute;
+              width: 1px;
+              height: 1px;
+              padding: 0;
+              margin: -1px;
+              overflow: hidden;
+              clip: rect(0, 0, 0, 0);
+              white-space: nowrap;
+              border: 0;
+            "
+            >Search Images</label
+          >
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search Images..."
+            aria-label="Search Images"
+          />
+        </div>
         <button type="submit" id="search-button">Search</button>
       </form>
+      <div class="chips-row">
+        <button type="button" class="chip">Typography</button>
+        <button type="button" class="chip">Minimalism</button>
+        <button type="button" class="chip">Textures</button>
+        <button type="button" class="chip">Abstract</button>
+      </div>
     </header>
     <main>
       <p id="status"></p>
+      <!-- Empty-state element placed outside #results to keep grid container genuinely empty -->
+      <div id="empty-state">Search for a topic above to explore images.</div>
       <section id="results"></section>
     </main>
     <script src="script.js"></script>

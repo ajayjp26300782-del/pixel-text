@@ -1,19 +1,11 @@
 :root {
   --color-1: #fafafa;
   --color-1-rgb: 250, 250, 250;
-  --color-1-hsl: 0, 0%, 98%;
   --color-2: #e5e5e5;
-  --color-2-rgb: 229, 229, 229;
-  --color-2-hsl: 0, 0%, 90%;
   --color-3: #737373;
-  --color-3-rgb: 115, 115, 115;
-  --color-3-hsl: 0, 0%, 45%;
   --color-4: #262626;
-  --color-4-rgb: 38, 38, 38;
-  --color-4-hsl: 0, 0%, 15%;
   --color-5: #0a0a0a;
-  --color-5-rgb: 10, 10, 10;
-  --color-5-hsl: 0, 0%, 4%;
+  --accent-pop: #0ea5e9;
 }
 
 @font-face {
@@ -56,11 +48,11 @@ header h1 {
 #search {
   display: flex;
   gap: 10px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 #search-input {
-  flex: 1;
+  width: 100%;
   padding: 12px 16px;
   font-size: 16px;
   border: 2px solid var(--color-5);
@@ -72,11 +64,10 @@ header h1 {
 }
 
 #search-input:focus {
-  border-color: var(--color-5);
-  box-shadow: 0 0 0 3px rgba(var(--color-1-rgb), 0.3);
+  border-color: var(--accent-pop);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
 }
 
-/* Optional styling if you have a search button */
 #search button {
   background-color: var(--color-1);
   color: #222;
@@ -90,13 +81,49 @@ header h1 {
 }
 
 #search button:hover {
-  background-color: var(--color-3);
+  background-color: var(--accent-pop);
+  color: #fff;
+}
+
+.chips-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.chip {
+  background-color: var(--color-2);
+  border: 1px solid var(--color-3);
+  padding: 6px 14px;
+  font-size: 13px;
+  font-family: "Rubik Lines", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chip:hover {
+  background-color: var(--accent-pop);
+  color: #fff;
+  border-color: var(--color-5);
 }
 
 #results {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 18px;
+  min-height: 150px;
+}
+
+#empty-state {
+  padding: 30px;
+  color: var(--color-3);
+  background: #fff;
+  border: 2px dashed var(--color-3);
+  text-align: center;
+  font-family: "Castoro Titling", serif;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .card {
@@ -125,10 +152,4 @@ header h1 {
   font-family: "Castoro Titling", serif;
   font-weight: 700;
   color: #333;
-}
-
-.gravitas-one-regular {
-  font-family: "Gravitas One", serif;
-  font-weight: 400;
-  font-style: normal;
 }
