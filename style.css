@@ -56,11 +56,11 @@ header h1 {
 #search {
   display: flex;
   gap: 10px;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 #search-input {
-  flex: 1;
+  width: 100%;
   padding: 12px 16px;
   font-size: 16px;
   border: 2px solid var(--color-5);
@@ -76,7 +76,6 @@ header h1 {
   box-shadow: 0 0 0 3px rgba(var(--color-1-rgb), 0.3);
 }
 
-/* Optional styling if you have a search button */
 #search button {
   background-color: var(--color-1);
   color: #222;
@@ -93,10 +92,50 @@ header h1 {
   background-color: var(--color-3);
 }
 
+/* Original Feature 1: Category Suggestion Chips */
+.chips-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.chip {
+  background-color: var(--color-2);
+  border: 1px solid var(--color-3);
+  padding: 6px 14px;
+  font-size: 13px;
+  font-family: "Rubik Lines", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chip:hover {
+  background-color: var(--color-3);
+  color: #fff;
+}
+
+/* Results Grid Container */
 #results {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 18px;
+  min-height: 200px;
+}
+
+/* Original Feature 2: Empty-State Message */
+#empty-state {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  color: var(--color-3);
+  background: #fff;
+  border: 2px dashed var(--color-2);
+  text-align: center;
+  font-family: "Castoro Titling", serif;
+  font-size: 16px;
 }
 
 .card {
@@ -125,10 +164,4 @@ header h1 {
   font-family: "Castoro Titling", serif;
   font-weight: 700;
   color: #333;
-}
-
-.gravitas-one-regular {
-  font-family: "Gravitas One", serif;
-  font-weight: 400;
-  font-style: normal;
 }
